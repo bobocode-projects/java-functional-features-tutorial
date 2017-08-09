@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Parameterization in old Java version.
  *
- * This is a typical example of code for Java before version 8. The first class citizens in Java are objects.
+ * This is a typical example of Java code before version 8. The first class citizens in Java are objects.
  * Therefore we always pass as methods arguments only primitive values, and objects. In other words, we add methods
  * parameters to make methods more universal. But what if we need to parameterize the behavior? What if we need to
  * perform different operations on account list basing on different conditions? That's called behavior parameterization.

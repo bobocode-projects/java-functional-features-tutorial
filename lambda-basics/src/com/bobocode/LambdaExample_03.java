@@ -26,12 +26,12 @@ import static java.time.Period.between;
 public class LambdaExample_03 {
     public static void main(String[] args) {
         List<Account> accounts = TestDataProvider.generateAccountList();
-        processAccountWithoutLambdas(accounts,
+        processAccounts(accounts,
                 a -> Period.between(a.getCreationDate(), LocalDate.now()).getYears() > 4,
                 a -> a.setBalance(a.getBalance().add(BigDecimal.valueOf(50))));
     }
 
-    private static void processAccountWithoutLambdas(List<Account> accounts, Condition<Account> condition,
+    private static void processAccounts(List<Account> accounts, Condition<Account> condition,
                                                      Operation<Account> operation) {
         for (Account account : accounts) {
             if (condition.isTrue(account)) {
