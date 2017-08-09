@@ -12,7 +12,7 @@ import java.util.function.Function;
  * The task is to create different types of functions and manage them using FunctionFactory. The instruction is placed
  * to the main method.
  */
-public class LambdaTask_01 {
+public class FunctionFactoryTask {
 
     static class FunctionFactory<T, R> {
         private Map<String, Function<T, R>> functionMap = new HashMap<>();
