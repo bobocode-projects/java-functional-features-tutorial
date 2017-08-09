@@ -6,7 +6,7 @@ import java.util.stream.LongStream;
 
 public class StreamExamples_ParallelProcessing {
     static final long STREAM_SIZE = 100000000;
-    static final int N = 12;
+    static final int N = 10;
 
     public static void main(String[] args) {
         LongPredicate isEven = n -> n % 2 == 0;
