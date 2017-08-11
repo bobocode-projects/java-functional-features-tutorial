@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * Your job is to refactor this task to use Stream API instead of processAccounts method() (it should be removed)
- * Instead of custom created Condition, and Operation interfaces you need to used existing functional interfaces.
+ * Instead of custom Condition, and Operation interfaces you need to use functional interfaces that exist in Java API.
  */
 public class SreamTask_Refactoring {
     public static void main(String[] args) {
