@@ -1,13 +1,16 @@
 package bobocode;
 
+import java.util.Objects;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class BinarySearchTree<T extends Comparable> implements BST<T> {
      Node<T> root;
 
     @Override
     public boolean insert(T element) {
-        if (root == null) {
+        Predicate<Node<T>> predicate = Objects::nonNull;
+        if (predicate.test(root)) {
             root = new Node<>(element);
             return true;
         } else {

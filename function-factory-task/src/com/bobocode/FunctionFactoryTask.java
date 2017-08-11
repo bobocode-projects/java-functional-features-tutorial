@@ -41,12 +41,24 @@ public class FunctionFactoryTask {
      */
     public static void main(String[] args) {
         FunctionFactory<Integer, Integer> functionFactory = new FunctionFactory<>();
-
         // 1. add simple functions "square", "increment", "decrement", "negative"
         // 2. get each function by name, and apply to argument 5, print a result (should be 25, 6, 4,-5 accordingly)
         // 3. add simple function "abs" using method reference (use class Math)
         // 4. add try/catch block, catch InvalidFunctionNameException and print some error message to the console
         // 5. try to get function with invalid name
+
+        functionFactory.addFunction("square", n -> n * n);
+        functionFactory.addFunction("abs", Math::abs);
+
+        functionFactory.getFunction("square").apply(5);
+        try{
+            functionFactory.getFunction("abs").apply(5);
+        }catch (InvalidFunctionNameException e){
+            System.out.println(e.getMessage());
+        }
+
+
+
 
     }
 
