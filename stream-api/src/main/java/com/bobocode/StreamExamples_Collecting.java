@@ -5,9 +5,12 @@ import com.bobocode.model.Account;
 import com.bobocode.util.TestDataProvider;
 
 import java.time.Month;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
+import static java.util.Comparator.*;
 import static java.util.stream.Collectors.*;
 
 /**
@@ -56,5 +59,24 @@ public class StreamExamples_Collecting {
                 .map(Account::getFirstName)
                 .collect(joining(", "));
         System.out.println(concatenatedName);
+
+
+        Map<Boolean, List<Account>> accountByNameLength = accounts.stream()
+                .collect(partitioningBy(a -> a.getFirstName().length() > 4));
+
+        Map<Boolean, Optional<Account>> lengthNameAccountsWithMaxBalance = accounts.stream()
+                .collect(
+                        partitioningBy(a -> a.getFirstName().length() > 4,
+                                maxBy(comparing(Account::getBalance)))
+                );
+
+
+        Map<Boolean, Map<Month, List<String>>> accountByNameLengthByBirthdayMonth = accounts.stream()
+                .collect(partitioningBy(a -> a.getFirstName().length() > 4,
+                        groupingBy(a -> a.getBirthday().getMonth(),
+                                mapping(Account::getFirstName, toList()))));
+
+        System.out.println(accountByNameLengthByBirthdayMonth);
+
     }
 }

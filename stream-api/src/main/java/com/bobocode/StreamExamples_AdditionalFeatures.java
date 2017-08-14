@@ -19,7 +19,7 @@ public class StreamExamples_AdditionalFeatures {
     public static void main(String[] args) {
         List<Account> accounts = TestDataProvider.generateAccountList();
 
-        // Soring elements
+        // Sorting elements
         System.out.println("Account owner's sorter names: ");
         accounts.stream()
                 .sorted(comparing(Account::getFirstName))
