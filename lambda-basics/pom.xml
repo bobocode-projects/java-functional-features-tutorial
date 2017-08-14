@@ -12,5 +12,18 @@
 
     <artifactId>lambda-basics</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.bobocode</groupId>
+            <artifactId>account-model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.bobocode</groupId>
+            <artifactId>util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
     
 </project>

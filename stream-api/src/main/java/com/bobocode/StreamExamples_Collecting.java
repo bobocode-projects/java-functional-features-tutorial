@@ -15,7 +15,7 @@ import static java.util.stream.Collectors.*;
  * Methods collect transform a stream into a real collection like List, or a Map. A Collector is a complex structure,
  * that describes a collecting logic. It provides an instruction about how elements should collected, and what collection
  * should be used.
- *
+ * <p>
  * Basically method collect<Collector c> allow you to declare how do you want to collect your stream elements. Simplest
  * example is collecting all elements to list. However this mechanism is very powerful, and allows to perform various
  * complex data transformations. E.g. "Group all account by it's birthday month", if you want to get a Map<Month, Account>
@@ -49,5 +49,12 @@ public class StreamExamples_Collecting {
         System.out.println(googleEmailAccounts);
 
         System.out.println(accountFirstNamesyBirthdayMonth);
+
+        // If you want effectively collect String values you need to use joining() operation
+        System.out.println("\nNames concatenated using joining(\",\") method: ");
+        String concatenatedName = accounts.stream()
+                .map(Account::getFirstName)
+                .collect(joining(", "));
+        System.out.println(concatenatedName);
     }
 }
