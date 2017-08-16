@@ -1,11 +1,16 @@
 package com.bobocode.util;
 
 import com.bobocode.model.Account;
+import io.codearte.jfairy.Fairy;
+import io.codearte.jfairy.producer.payment.CreditCard;
+import io.codearte.jfairy.producer.person.Person;
+import org.apache.commons.lang3.RandomStringUtils;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class TestDataProvider {
 
@@ -25,5 +30,26 @@ public class TestDataProvider {
                 LocalDate.of(1969, 8, 19), LocalDate.of(2011, 10, 4), BigDecimal.valueOf(45678.12)));
         return accounts;
     }
+
+    public static Account generateFakeAccount(){
+        Fairy fairy = Fairy.create();
+        Person person = fairy.person();
+        Random random = new Random();
+
+
+        Account fakeAccount = new Account();
+        fakeAccount.setFirstName(person.getFirstName());
+        fakeAccount.setLastName(person.getFirstName());
+        fakeAccount.setEmail(person.getEmail());
+        fakeAccount.setBirthday(LocalDate.of(
+                person.getDateOfBirth().getYear(),
+                person.getDateOfBirth().getMonthOfYear(),
+                person.getDateOfBirth().getDayOfMonth()));
+        fakeAccount.setBalance(BigDecimal.valueOf(random.nextInt(200_000)));
+        fakeAccount.setCreationDate(LocalDate.now());
+
+        return fakeAccount;
+    }
+
 
 }
