@@ -1,6 +1,7 @@
 package com.bobocode;
 
 
+import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
 import com.bobocode.util.TestDataProvider;
 
@@ -12,7 +13,7 @@ import static java.util.Comparator.comparing;
 
 public class StreamExamples_Primitives {
     public static void main(String[] args) {
-        List<Account> accounts = TestDataProvider.generateAccountList();
+        List<Account> accounts = Accounts.getAccountList(10);
 
         // You can create a stream of primitive value
         LongStream longStream = LongStream.range(1, 1000);

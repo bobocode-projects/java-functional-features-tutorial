@@ -1,6 +1,7 @@
 package com.bobocode;
 
 
+import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
 import com.bobocode.util.TestDataProvider;
 
@@ -11,7 +12,7 @@ import java.util.List;
  */
 public class StreamTask_Collecting {
     public static void main(String[] args) {
-        List<Account> accounts = TestDataProvider.generateAccountList();
+        List<Account> accounts = Accounts.getAccountList(10);
 
         // 1 - Find a set of account owner's names(first name) that have a length <= 4
 

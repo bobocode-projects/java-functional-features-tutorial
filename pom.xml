@@ -5,18 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.bobocode</groupId>
-    <artifactId>java-8-parent</artifactId>
+    <artifactId>java-8-tutorial</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>binary-search-tree</module>
         <module>function-factory-task</module>
         <module>lambda-basics</module>
         <module>stream-api</module>
         <module>optional-basics</module>
-        <module>account-model</module>
-        <module>test-data-provider</module>
+        <module>account-data</module>
     </modules>
 
     <properties>

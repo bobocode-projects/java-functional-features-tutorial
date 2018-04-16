@@ -1,5 +1,6 @@
 package com.bobocode;
 
+import com.bobocode.data.Accounts;
 import com.bobocode.functions.Condition;
 import com.bobocode.functions.Operation;
 import com.bobocode.model.Account;
@@ -16,7 +17,7 @@ import java.util.List;
  */
 public class StreamTask_Refactoring {
     public static void main(String[] args) {
-        List<Account> accounts = TestDataProvider.generateAccountList();
+        List<Account> accounts = Accounts.getAccountList(10);
         processAccounts(accounts,
                 a -> Period.between(a.getCreationDate().toLocalDate(), LocalDate.now()).getYears() > 4,
                 a -> a.setBalance(a.getBalance().add(BigDecimal.valueOf(50))));

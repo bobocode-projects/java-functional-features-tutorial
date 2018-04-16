@@ -1,6 +1,7 @@
 package com.bobocode;
 
 
+import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
 import com.bobocode.util.TestDataProvider;
 
@@ -12,7 +13,7 @@ import java.util.List;
  */
 public class StreamExamples_Reducing {
     public static void main(String[] args) {
-        List<Account> accounts = TestDataProvider.generateAccountList();
+        List<Account> accounts = Accounts.getAccountList(10);
 
         // The Stream<Account> is transformed to DoubleStream (a stream of account balances)
         // Then this stream is reduced to the sum of all account

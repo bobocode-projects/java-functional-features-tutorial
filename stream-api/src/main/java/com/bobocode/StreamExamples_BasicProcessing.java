@@ -1,6 +1,7 @@
 package com.bobocode;
 
 
+import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
 import com.bobocode.util.TestDataProvider;
 
@@ -21,7 +22,7 @@ import static java.util.stream.Collectors.*;
 
 public class StreamExamples_BasicProcessing {
     public static void main(String[] args) {
-        List<Account> accounts = TestDataProvider.generateAccountList();
+        List<Account> accounts = Accounts.getAccountList(10);
 
         // Stream is not a collection, it's a way of processing data in pipelines
         // Stream does not provide a storage for data, but you can create a stream on top of some data source, like

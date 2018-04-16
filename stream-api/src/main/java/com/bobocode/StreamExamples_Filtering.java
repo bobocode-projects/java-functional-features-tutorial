@@ -1,6 +1,7 @@
 package com.bobocode;
 
 
+import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
 import com.bobocode.util.TestDataProvider;
 
@@ -16,7 +17,7 @@ import static java.util.stream.Collectors.*;
 
 public class StreamExamples_Filtering {
     public static void main(String[] args) {
-        List<Account> accounts = TestDataProvider.generateAccountList();
+        List<Account> accounts = Accounts.getAccountList(10);
 
         // Filtering elements, method filter receives Predicate<String> and returns true if an email is gmail based.
         // Please note, that we transform the stream of accounts into stream of emails before filtering

@@ -1,6 +1,7 @@
 package com.bobocode;
 
 
+import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
 import com.bobocode.util.TestDataProvider;
 
@@ -19,7 +20,7 @@ import static java.util.stream.Collectors.groupingBy;
 
 public class StreamExamples_Mapping {
     public static void main(String[] args) {
-        List<Account> accounts = TestDataProvider.generateAccountList();
+        List<Account> accounts = Accounts.getAccountList(10);
 
         // Mapping elements, method map() receives a Function<Account, String>. This function transforms(map) each
         // element of the stream into another value (transforms each account object into its email). Method map()

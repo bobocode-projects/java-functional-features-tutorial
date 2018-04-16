@@ -1,5 +1,6 @@
 package com.bobocode;
 
+import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
 import com.bobocode.util.TestDataProvider;
 
@@ -27,7 +28,7 @@ import java.util.List;
  * */
 public class LambdaExample_01 {
     public static void main(String[] args) {
-        List<Account> accounts = TestDataProvider.generateAccountList();
+        List<Account> accounts = Accounts.getAccountList(10);
         giveBonusForLoyalClients(accounts, 4, BigDecimal.valueOf(50));
     }
 

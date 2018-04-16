@@ -1,6 +1,7 @@
 package com.bobocode;
 
 
+import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
 import com.bobocode.model.CreditAccount;
 import com.bobocode.util.TestDataProvider;
@@ -19,7 +20,7 @@ import static java.util.stream.Collectors.maxBy;
  */
 public class OptionalExample_Mapping {
     public static void main(String[] args) {
-        List<Account> accounts = TestDataProvider.generateAccountList();
+        List<Account> accounts = Accounts.getAccountList(10);
         Account defaultAccount = accounts.get(0);
         List<CreditAccount> creditAccounts = Collections.singletonList(new CreditAccount(BigDecimal.valueOf(1000)));
 

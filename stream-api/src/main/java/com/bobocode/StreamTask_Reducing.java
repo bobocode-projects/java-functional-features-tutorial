@@ -1,6 +1,7 @@
 package com.bobocode;
 
 
+import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
 import com.bobocode.util.TestDataProvider;
 
@@ -11,7 +12,7 @@ import java.util.List;
  */
 public class StreamTask_Reducing {
     public static void main(String[] args) {
-        List<Account> accounts = TestDataProvider.generateAccountList();
+        List<Account> accounts = Accounts.getAccountList(10);
 
         // 1 - Calculate sum of all account balances using reduce() method that receives two parameters:
         // default value and lambda (DO NOT USE METHOD REFERENCE)

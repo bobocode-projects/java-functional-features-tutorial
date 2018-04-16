@@ -1,6 +1,7 @@
 package com.bobocode;
 
 
+import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
 import com.bobocode.util.TestDataProvider;
 
@@ -26,7 +27,7 @@ import static java.util.stream.Collectors.*;
  */
 public class StreamExamples_Collecting {
     public static void main(String[] args) {
-        List<Account> accounts = TestDataProvider.generateAccountList();
+        List<Account> accounts = Accounts.getAccountList(10);
 
         System.out.println("\nMap accounts into emails, filter gmail accounts, collect emails into List: ");
         List<String> accountEmails = accounts.stream()
