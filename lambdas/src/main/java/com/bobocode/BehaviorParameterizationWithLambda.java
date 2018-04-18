@@ -24,9 +24,10 @@ import static java.time.Period.between;
  * See LambdaExample_04.java for different target typing examples
  *
  */
-public class LambdaExample_03 {
+public class BehaviorParameterizationWithLambda {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
+
         processAccounts(accounts,
                 a -> Period.between(a.getCreationDate().toLocalDate(), LocalDate.now()).getYears() > 4,
                 a -> a.setBalance(a.getBalance().add(BigDecimal.valueOf(50))));

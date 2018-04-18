@@ -3,15 +3,13 @@ package com.bobocode;
 
 import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
-import com.bobocode.util.TestDataProvider;
 
 import java.time.Month;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import static java.util.Comparator.*;
+import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
 
 /**
@@ -25,7 +23,7 @@ import static java.util.stream.Collectors.*;
  * complex data transformations. E.g. "Group all account by it's birthday month", if you want to get a Map<Month, Account>
  * - a map where a key is a month, and a value is an account instance
  */
-public class StreamExamples_Collecting {
+public class Collecting {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
 

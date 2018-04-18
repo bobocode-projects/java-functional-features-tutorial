@@ -3,22 +3,17 @@ package com.bobocode;
 
 import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
-import com.bobocode.util.TestDataProvider;
 
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
 import java.util.function.Supplier;
-import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-import static java.util.Comparator.comparing;
 import static java.util.function.Function.identity;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 
-public class StreamExamples_Mapping {
+public class Mapping {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
 

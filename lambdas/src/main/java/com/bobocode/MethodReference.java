@@ -6,7 +6,7 @@ import java.util.function.Supplier;
 /**
  * Created by taras on 8/11/17.
  */
-public class LambdaExample_MethodReference {
+public class MethodReference {
     public static void main(String[] args) {
         // 1 - method reference to static method
         Function<Integer, Integer> absFunction = Math::abs;

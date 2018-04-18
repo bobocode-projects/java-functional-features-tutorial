@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>java-8-parent</artifactId>
+        <artifactId>java-8-tutorial</artifactId>
         <groupId>com.bobocode</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
@@ -15,12 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>com.bobocode</groupId>
-            <artifactId>account-model</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.bobocode</groupId>
-            <artifactId>test-data-provider</artifactId>
+            <artifactId>account-data</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

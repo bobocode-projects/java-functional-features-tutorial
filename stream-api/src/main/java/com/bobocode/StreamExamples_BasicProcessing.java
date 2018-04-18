@@ -3,22 +3,11 @@ package com.bobocode;
 
 import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
-import com.bobocode.util.TestDataProvider;
 
-import java.math.BigDecimal;
-import java.time.Month;
-import java.util.*;
+import java.util.List;
 import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
-import java.util.function.Function;
-import java.util.function.UnaryOperator;
 import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 import java.util.stream.Stream;
-
-import static java.util.Comparator.comparing;
-import static java.util.Comparator.comparingDouble;
-import static java.util.stream.Collectors.*;
 
 public class StreamExamples_BasicProcessing {
     public static void main(String[] args) {

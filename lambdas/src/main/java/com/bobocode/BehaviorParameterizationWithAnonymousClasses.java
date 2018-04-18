@@ -15,15 +15,18 @@ import static java.time.Period.between;
 /**
  * Behavior parameterization with Interfaces and anonymous classes.
  *
- * We changed the code. Now we can pass conditional object and operation that should be allied on account when
+ * We can pass conditional object and operation that should be applied on account when
  * the condition is true.
  *
  * The problem is solved. Right?
  *
  * Do you like the code? Is it easy to understand what is does? Imagine that you will decide to
  * add another operation that will be applied when the condition is false.
+ *
+ * Nice behavior parameterization requires us to pass functions as method arguments.
+ * See @{@link BehaviorParameterizationWithLambda}
  */
-public class LambdaExample_02 {
+public class BehaviorParameterizationWithAnonymousClasses {
 
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
@@ -42,10 +45,10 @@ public class LambdaExample_02 {
             }
         };
 
-        processAccountWithoutLambdas(accounts, loyalClientCondition, bonusOperation);
+        processAccounts(accounts, loyalClientCondition, bonusOperation);
     }
 
-    private static void processAccountWithoutLambdas(List<Account> accounts, Condition<Account> condition,
+    private static void processAccounts(List<Account> accounts, Condition<Account> condition,
                                                      Operation<Account> operation) {
         for (Account account : accounts){
             if (condition.isTrue(account)){

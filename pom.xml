@@ -11,9 +11,9 @@
 
     <modules>
         <module>function-factory-task</module>
-        <module>lambda-basics</module>
+        <module>lambdas</module>
         <module>stream-api</module>
-        <module>optional-basics</module>
+        <module>optional</module>
         <module>account-data</module>
     </modules>
 

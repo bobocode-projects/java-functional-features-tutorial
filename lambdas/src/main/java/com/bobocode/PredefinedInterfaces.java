@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
  * Here you can find a list of various predefined interface variables. Your job is to provide implementation foe each
  * variable. In the comment you can see what options do you have
  */
-public class LambdaTask_PredefinedInterfaces {
+public class PredefinedInterfaces {
     public static void main(String[] args) {
 
         // Predicates. As you remember Predicate<T> is a functional interface, its method test() receives one argument

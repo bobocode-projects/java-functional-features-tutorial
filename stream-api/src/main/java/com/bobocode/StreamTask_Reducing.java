@@ -3,12 +3,11 @@ package com.bobocode;
 
 import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
-import com.bobocode.util.TestDataProvider;
 
 import java.util.List;
 
 /**
- * Using Stream API, lambdas, and predefined functional interfaces implement the code according to requirements
+ * Using Stream API, lambda, and predefined functional interfaces implement the code according to requirements
  */
 public class StreamTask_Reducing {
     public static void main(String[] args) {

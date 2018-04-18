@@ -3,19 +3,12 @@ package com.bobocode;
 
 import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
-import com.bobocode.util.TestDataProvider;
 
-import java.time.Month;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Predicate;
-import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-import static java.util.Comparator.comparing;
-import static java.util.stream.Collectors.*;
-
-public class StreamExamples_Filtering {
+public class Filtering {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
 

@@ -23,10 +23,10 @@ import java.util.List;
  * Let's try to solve this problem with old Java style. We can not pass a function, but we can create an interface
  * with one method, and then pass its anonymous implementation with required logic. That's much more flexible right?
  *
- * See LambdaExample_02.java
+ * See @{@link BehaviorParameterizationWithAnonymousClasses}
  *
  * */
-public class LambdaExample_01 {
+public class HardcodedBehavior {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
         giveBonusForLoyalClients(accounts, 4, BigDecimal.valueOf(50));
