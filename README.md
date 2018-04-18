@@ -4,6 +4,6 @@ This is the list of tutorials on functiona programming techniques in Java and fe
 * [Stream API](https://github.com/bobocode-projects/java-8-tutorial/tree/master/stream-api)
 * [Optional](https://github.com/bobocode-projects/java-8-tutorial/tree/master/optional)
 
-### Pre-conditions 
+### Pre-conditions :heavy_exclamation_mark:
 You're supposed to be familiar with OOP, have basic knowledge of JDK, and be able to write Java code.
 
