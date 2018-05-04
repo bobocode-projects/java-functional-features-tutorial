@@ -1,5 +1,5 @@
 # <img src="https://raw.githubusercontent.com/bobocode-projects/resources/master/image/logo_transparent_background.png" height=50/>Java 8 tutorial
-This is the list of tutorials on functiona programming techniques in Java and features that were added in JDK 1.8
+The list of tutorials on functional programming techniques in Java and features that were added in JDK 1.8
 * [Lambdas](https://github.com/bobocode-projects/java-8-tutorial/tree/master/lambdas)
 * [Stream API](https://github.com/bobocode-projects/java-8-tutorial/tree/master/stream-api)
 * [Optional](https://github.com/bobocode-projects/java-8-tutorial/tree/master/optional)
