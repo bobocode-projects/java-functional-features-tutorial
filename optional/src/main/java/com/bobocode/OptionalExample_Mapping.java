@@ -4,16 +4,11 @@ package com.bobocode;
 import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
 import com.bobocode.model.CreditAccount;
-import com.bobocode.util.TestDataProvider;
 
 import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.OptionalDouble;
-
-import static java.util.Comparator.comparing;
-import static java.util.stream.Collectors.maxBy;
 
 /**
  *

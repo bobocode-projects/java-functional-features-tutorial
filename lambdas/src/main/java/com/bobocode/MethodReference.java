@@ -1,40 +1,36 @@
 package com.bobocode;
 
+import com.bobocode.data.Accounts;
+import com.bobocode.model.Account;
+
+import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 /**
- * Created by taras on 8/11/17.
+ * Method reference is a shorthand for lambda expression that could be use in some cases for better readability.
  */
 public class MethodReference {
     public static void main(String[] args) {
-        // 1 - method reference to static method
-        Function<Integer, Integer> absFunction = Math::abs;
+        List<Account> accounts = Accounts.getAccountList(10);
 
-        int a = 5;
-
-        Function<Integer, Integer> f;
-
-        // 2 - methods reference to instance method
-        String hello = "Hello";
-        Supplier<String> helloUppercaseSupplier = hello::toUpperCase;
-        doSomethingWithStringSupplier(helloUppercaseSupplier);
-
-        // 3 - special case (ClassName::objMethodName)
-        Function<String, String> toUpperCase = String::toUpperCase;
-        toUpperCase.apply("hello");
+        printAccountsWithLambda(accounts);
+        printAccountsWithMethodReference(accounts);
     }
 
-    static void doSomethingWithStringSupplier(Supplier<String> stringSupplier) {
-
+    private static void printAccountsWithLambda(List<Account> accounts) {
+        consumeAccounts(accounts, a -> System.out.println(a));
     }
 
-    static String computeSomething() {
-        // some operation
-        return "hello";
+    private static void printAccountsWithMethodReference(List<Account> accounts) {
+        consumeAccounts(accounts, System.out::println); //todo: think what if you want to print only emails
     }
 
-    static void processSomething(String s) {
-
+    private static void consumeAccounts(List<Account> accounts, Consumer<Account> consumer) {
+        for (Account account : accounts){
+            consumer.accept(account);
+        }
     }
+
 }

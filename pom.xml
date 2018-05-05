@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>function-factory-task</module>
         <module>lambdas</module>
         <module>stream-api</module>
         <module>optional</module>
@@ -27,6 +26,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.21</version>
         </dependency>
     </dependencies>
 
