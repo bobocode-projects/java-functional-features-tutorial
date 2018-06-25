@@ -11,7 +11,7 @@ You're supposed to be familiar with OOP, have basic knowledge of JDK, and be abl
 ##
 Java is an OOP language, so it always works with classes and **doesn't support standalone functions**. In case you want to **pass some function as a method parameter**, or **store some code into a variable**, you should use a *Functional Interface* and a *Lambda expression*. 
 
-* A *Functional Interface* represents a **function signature**. It contains only one abstract method.
+* A *Functional Interface (FI)* represents a **function signature**. It contains only one abstract method.
 * A *Lambda expression* represents a **function body**. Is an anonymous function that implements the abstract method of the functional interface
 
 The purpose of the lambda and functional interfaces is to **make it easier to create function objects** and provide an **ability to use some functional programming technics in Java.**
@@ -34,3 +34,13 @@ In case you are calling some existing method inside the lambda, you can referenc
 ```java
         accounts.sort(comparing(Account::getFirstName));
 ```
+
+### Best practices
+* use **lambdas instead of anonymous classes**
+* **avoid lambda parameter types**, unless it can improve code readability 
+* **keep lambda expression as small** ( 1 line is the best option)
+* when creating a custom functional interface **always use `@FunctionalInterface` annotation**
+* **prefer standard predefined functional interfaces** (`java.util.function`)
+* create a **custom FI**, in case it has some **specific contract**, and you can **benefit from self-descriptive name** and **default methods**
+* **ALWAYS USE SPECIAL FI FOR PRIMITIVES** (e.g. `IntToDoubleFunction` instead of `Function<Integer, Double>`)
+* **prefer method reference** in all cases where it helps to improve readability
