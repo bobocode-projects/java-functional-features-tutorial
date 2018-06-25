@@ -18,7 +18,7 @@ The purpose of the lambda and functional interfaces is to **make it easier to cr
 
 A typical example is interface `Comparator<T>`:
 
-```
+```java
         accounts.sort(new Comparator<Account>() {
             @Override
             public int compare(Account o1, Account o2) {
@@ -27,6 +27,6 @@ A typical example is interface `Comparator<T>`:
         });
 ```
 It can be easily simplified using lambda expression:
-```
+```java
         accounts.sort((a1, a2) -> a1.getFirstName().compareTo(a2.getFirstName()));
 ```
