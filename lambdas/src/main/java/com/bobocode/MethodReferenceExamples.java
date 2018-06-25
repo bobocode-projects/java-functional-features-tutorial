@@ -1,7 +1,6 @@
 package com.bobocode;
 
-import java.util.function.BiFunction;
-import java.util.function.Function;
+import java.util.function.*;
 
 /**
  * A list of method reference examples.
@@ -10,21 +9,27 @@ public class MethodReferenceExamples {
     public static void main(String[] args) {
         printAbsUsingMethodReference(-23);
         printSumUsingMethodReference(25, 50);
+        printUpperStringUsingMethodReference("Lambda is awesome!");
     }
 
     private static void printAbsUsingMethodReference(int a) {
-        Function<Integer, Integer> absFunction = Math::abs;
-        int result = absFunction.apply(a);
+        IntUnaryOperator absOperator = Math::abs;
+        int result = absOperator.applyAsInt(a);
 
         System.out.println("abd(" + a + ") = " + result);
     }
 
     private static void printSumUsingMethodReference(int a, int b) {
-        BiFunction<Integer, Integer, Integer> sumFunction = Math::addExact;
-        int result = sumFunction.apply(a, b);
+        IntBinaryOperator sumOperator = Math::addExact;
+        int result = sumOperator.applyAsInt(a, b);
 
-        System.out.println(a +" + "+ b + " = " + result);
+        System.out.println("\n" + a + " + " + b + " = " + result);
     }
 
+    private static void printUpperStringUsingMethodReference(String s) {
+        UnaryOperator<String> upperOperation = String::toUpperCase;
+
+        System.out.println("\n" + s + " -> " + upperOperation.apply(s));
+    }
 
 }

@@ -8,7 +8,7 @@ import java.util.List;
 
 import static java.util.Comparator.comparing;
 
-public class ComparatorExample {
+public class LambdaComparatorExample {
 
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);

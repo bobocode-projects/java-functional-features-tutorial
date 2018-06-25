@@ -11,7 +11,7 @@ import java.util.Optional;
 /**
  * Stream reducing is performed with method reduce(), that repeatedly process stream elements to provide a single value
  */
-public class Reducing {
+public class StreamReducing {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
 

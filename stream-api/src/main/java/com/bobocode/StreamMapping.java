@@ -12,7 +12,7 @@ import static java.util.function.Function.identity;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 
-public class Mapping {
+public class StreamMapping {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
 
@@ -21,7 +21,7 @@ public class Mapping {
     }
 
     /**
-     * Mapping elements, method map() receives a @{@link java.util.function.Function}. This function transforms(maps)
+     * StreamMapping elements, method map() receives a @{@link java.util.function.Function}. This function transforms(maps)
      * each element of the stream into another value (transforms each account object into its email). Method map()
      * produce a new stream @{@link Stream} of @{@link String} (stream of emails)
      */

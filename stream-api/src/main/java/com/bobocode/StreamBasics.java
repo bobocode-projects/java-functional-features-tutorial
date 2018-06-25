@@ -19,7 +19,7 @@ import static java.util.stream.Collectors.toList;
  */
 
 
-public class Basics {
+public class StreamBasics {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
         Stream<Account> accountStream = accounts.stream(); // you can create stream directly from a collection object

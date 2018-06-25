@@ -4,7 +4,7 @@ package com.bobocode;
 import java.util.function.LongPredicate;
 import java.util.stream.LongStream;
 
-public class ParallelProcessing {
+public class StreamParallelProcessing {
     static final long STREAM_SIZE = 10_0000_000;
     static final int N = 10;
 

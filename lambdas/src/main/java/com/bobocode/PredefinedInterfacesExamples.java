@@ -4,10 +4,7 @@ import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
 
 import java.util.Random;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.*;
 import java.util.stream.IntStream;
 
 /**
@@ -15,60 +12,53 @@ import java.util.stream.IntStream;
  */
 public class PredefinedInterfacesExamples {
     public static void main(String[] args) {
-
         printEmailUsingAccountConsumer();
-
         printARandomNumberUsingIntegerSupplier();
-
         calculate3xValueUsingIntegerFunction();
-
         checkIfNumberIsPositiveUsingIntegerPredicate();
-
         verifyGoogleEmailUsingAccountPredicate();
-
         printPrimeNumbersUsingIntegerPredicate();
-
     }
 
     private static void printARandomNumberUsingIntegerSupplier() {
-        Supplier<Integer> integerSupplier = () -> new Random().nextInt(1000);
+        IntSupplier integerSupplier = () -> new Random().nextInt(1000);
 
-        System.out.println("Next value: " + integerSupplier.get());
+        System.out.println("\nNext random value: " + integerSupplier.getAsInt());
     }
 
     private static void printEmailUsingAccountConsumer() {
-        Consumer<Account> accountConsumer = acc -> System.out.println(acc.getEmail());
+        Consumer<Account> accountConsumer = acc -> System.out.println("\nAccount email: " + acc.getEmail());
         Account account = Accounts.getAccount();
 
         accountConsumer.accept(account);
     }
 
     private static void calculate3xValueUsingIntegerFunction() {
-        Function<Integer, Integer> tripleFunction = n -> 3 * n;
+        IntUnaryOperator tripleFunction = n -> 3 * n;
         int a = 12;
 
-        System.out.println("3 * " + a + tripleFunction.apply(a));
+        System.out.println("\n3 * " + a + " = " + tripleFunction.applyAsInt(a));
     }
 
     private static void checkIfNumberIsPositiveUsingIntegerPredicate() {
-        Predicate<Integer> isPositive = n -> n > 0;
-        int b = 23;
+        IntPredicate isPositive = n -> n > 0;
+        int b = new Random().nextInt();
 
-        System.out.println(b + " is " + (isPositive.test(b) ? "positive" : "negative"));
+        System.out.println("\n" + b + " is " + (isPositive.test(b) ? "positive" : "negative"));
     }
 
     private static void verifyGoogleEmailUsingAccountPredicate() {
         Account account = Accounts.getAccount();
         Predicate<Account> isGmailUser = a -> a.getEmail().endsWith("@gmail.com");
 
-        System.out.println("\"" + account.getEmail() + "\"" + " is "
-                + (isGmailUser.test(account) ? "" : "not") + " a Google mail.");
+        System.out.println("\n" + account.getEmail() + " is "
+                + (isGmailUser.test(account) ? "" : "not") + " a Google email.");
     }
 
     private static void printPrimeNumbersUsingIntegerPredicate() {
-        Predicate<Integer> isPrime = n -> IntStream.range(2, n).noneMatch(i -> n % i == 0);
-
-        IntStream.range(1, 10)
+        IntPredicate isPrime = n -> IntStream.range(2, n).noneMatch(i -> n % i == 0);
+        System.out.println();
+        IntStream.rangeClosed(1, 25)
                 .forEach(i -> System.out.printf("%3d %10s\n", i, (isPrime.test(i) ? " is prime" : "")));
     }
 }

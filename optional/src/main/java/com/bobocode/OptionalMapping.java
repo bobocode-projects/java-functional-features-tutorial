@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-public class OptionalMappingExample {
+public class OptionalMapping {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
         List<CreditAccount> creditAccounts = Collections.singletonList(new CreditAccount(BigDecimal.valueOf(1000)));

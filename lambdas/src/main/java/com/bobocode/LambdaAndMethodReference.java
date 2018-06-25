@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 /**
  * Method reference is a shorthand for lambda expression that could be use in some cases for better readability.
  */
-public class MethodReference {
+public class LambdaAndMethodReference {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
 

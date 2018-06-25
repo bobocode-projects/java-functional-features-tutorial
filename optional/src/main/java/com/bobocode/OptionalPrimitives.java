@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.OptionalDouble;
 
-public class OptionalForPrimitivesExample {
+public class OptionalPrimitives {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
 

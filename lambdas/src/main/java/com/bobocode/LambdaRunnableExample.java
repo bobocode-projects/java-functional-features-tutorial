@@ -1,6 +1,6 @@
 package com.bobocode;
 
-public class RunnableExample {
+public class LambdaRunnableExample {
     public static void main(String[] args) {
         sayHelloFromNewThread();
         sayHelloFromNewThreadUsingLambda();

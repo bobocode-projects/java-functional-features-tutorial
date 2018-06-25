@@ -7,7 +7,7 @@ import com.bobocode.model.Account;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Filtering {
+public class StreamFiltering {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
 

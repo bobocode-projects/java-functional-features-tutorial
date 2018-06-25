@@ -11,7 +11,7 @@ import java.util.Map;
 import static java.util.stream.Collectors.*;
 
 /**
- * Collecting stream elements with method collect() that receives a {@link java.util.stream.Collector} instance as input
+ * StreamCollecting stream elements with method collect() that receives a {@link java.util.stream.Collector} instance as input
  * parameter. Method collect() transforms a stream into a real collection like {@link List}, or a {@link Map}.
  * A {@link java.util.stream.Collector} is a complex structure, that describes a collecting logic. It provides
  * an instruction about how elements should collected, and what collection should be used.
@@ -19,7 +19,7 @@ import static java.util.stream.Collectors.*;
  * The simplest example is collecting all elements into a list. However this mechanism is very powerful, and allows
  * to perform various complex data transformations. E.g. "Group all account by it's birthday month"
  */
-public class Collecting {
+public class StreamCollecting {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
 
@@ -28,7 +28,7 @@ public class Collecting {
         printAccountFirstNamesByItsBirthdaysMonth(accounts);
         printFirstNamesSeparatingGmailAccountsAndOthers(accounts);
         printCommaSeparatedNames(accounts);
-        printNamesSeparatedGmailAccountAndOthersAndGroupedByBirthdayMonth(accounts); // OVERUSE
+        printNamesSeparatedGmailAccountAndOthersAndGroupedByBirthdayMonth(accounts);
     }
 
     private static void printAllGmailAccounts(List<Account> accounts) {

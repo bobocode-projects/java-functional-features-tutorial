@@ -13,7 +13,7 @@ import static java.util.stream.Collectors.toSet;
 /**
  * Stream API provides a lot of useful features features that help you process data even more concise.
  */
-public class AdditionalFeatures {
+public class StreamAdditionalFeatures {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
 

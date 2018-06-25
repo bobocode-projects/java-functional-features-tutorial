@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-public class Primitives {
+public class StreamPrimitives {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
 
