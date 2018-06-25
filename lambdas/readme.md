@@ -30,3 +30,7 @@ It can be easily simplified using lambda expression:
 ```java
         accounts.sort((a1, a2) -> a1.getFirstName().compareTo(a2.getFirstName()));
 ```
+In case you are calling some existing method inside the lambda, you can reference that method instead of acctually calling it. This technique is called *Method Reference*. Combining it with usefull default method `comparing()` it can help you to simplify the code even more:
+```java
+        accounts.sort(comparing(Account::getFirstName));
+```
