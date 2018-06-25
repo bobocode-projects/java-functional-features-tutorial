@@ -32,3 +32,15 @@ Declarative style using *Stream API*:
                 .filter(a -> a.getEmail().endsWith("@gmail"))
                 .collect(toList());
 ```
+
+### Best practices
+* **use streams** wheneve it can make the code clear and concise
+* use **clear names for lambda parameters** in stream pipelines
+* **use helper methods** for better readability
+* be carefull using a stream of chars
+* **prefer pure functions** for stream operations, **avoid side-effect function**
+* always use **static import** for better readability
+* **always use `joining()` collector** for `CharSequence` elements to avoid performance issues
+* prefer collections and not stream as method return-type
+* use **parallel stream only when it's critical**, when you know that it helps, and **always measure it using real data**
+* **ALWAYS USE SPECIAL CLASSES FOR PRIMITIVES.** (E.g. `IntStream` instead of `Stream<Integer>`)
