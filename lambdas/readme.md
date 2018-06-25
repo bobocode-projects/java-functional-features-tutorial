@@ -38,8 +38,8 @@ In case you are calling some existing method inside the lambda, you can referenc
 ### Best practices
 * use **lambdas instead of anonymous classes**
 * **avoid lambda parameter types**, unless it can improve code readability 
-* **keep lambda expression as small** ( 1 line is the best option)
-* when creating a custom functional interface **always use `@FunctionalInterface` annotation**
+* **keep lambda expression small** (1 line is the best option)
+* **always use `@FunctionalInterface` annotation** for custom functional interfaces
 * **prefer standard predefined functional interfaces** (`java.util.function`)
 * create a **custom FI**, in case it has some **specific contract**, and you can **benefit from self-descriptive name** and **default methods**
 * **ALWAYS USE SPECIAL FI FOR PRIMITIVES** (e.g. `IntToDoubleFunction` instead of `Function<Integer, Double>`)
