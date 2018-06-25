@@ -9,10 +9,10 @@ You're supposed to be familiar with OOP, have basic knowledge of JDK, and be abl
 * [Tutorial on Optional](https://github.com/bobocode-projects/java-8-tutorial/tree/master/optional)
 * [Tutorial on Stream API](https://github.com/bobocode-projects/java-8-tutorial/tree/master/stream-api)
 ##
-Java is an OOP language, so it always works with classes and **doesn't support stanalone functions**. In case you want to **pass some function as a method parameter**, or **store some code into a variable**, you should use a *Funatinal Interface* and a *Lambda expression*. 
+Java is an OOP language, so it always works with classes and **doesn't support standalone functions**. In case you want to **pass some function as a method parameter**, or **store some code into a variable**, you should use a *Functional Interface* and a *Lambda expression*. 
 
 * A *Functional Interface* represents a **function signature**. It contains only one abstract method.
-* A *Lambda expressoin* respresents a **function body**. Is an anonymous function that implements the abstract method of the functiona interface
+* A *Lambda expression* represents a **function body**. Is an anonymous function that implements the abstract method of the functional interface
 
 The purpose of the lambda and functional interfaces is to **make it easier to create function objects** and provide an **ability to use some functional programming technics in Java.**
 
