@@ -5,17 +5,22 @@ import java.util.function.LongPredicate;
 import java.util.stream.LongStream;
 
 public class StreamParallelProcessing {
-    static final long STREAM_SIZE = 10_0000_000;
+    static final long STREAM_SIZE = 100_000_000;
     static final int N = 10;
 
     public static void main(String[] args) {
-        LongPredicate isEven = n -> n % 2 == 0;
+        LongPredicate isDivisibleBySeven = n -> n % 7 == 0;
 
         System.out.println("Sequential processing");
-        performNTimes(N, () -> LongStream.range(1, STREAM_SIZE).filter(isEven).count());
+        performNTimes(N, () -> LongStream.range(1, STREAM_SIZE)
+                .filter(isDivisibleBySeven)
+                .count());
 
         System.out.println("\nParallel processing");
-        performNTimes(N, () -> LongStream.range(1, STREAM_SIZE).parallel().filter(isEven).count());
+        performNTimes(N, () -> LongStream.range(1, STREAM_SIZE)
+                .parallel()
+                .filter(isDivisibleBySeven)
+                .count());
 
     }
 

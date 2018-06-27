@@ -12,12 +12,12 @@ public class ImperativeVsDeclarativeFiltering {
     public static void main(String[] args) {
         List<Account> accounts = Accounts.getAccountList(10);
 
-        findAllGmailAccountImperatively(accounts);
-        findAllGmailAccountDeclaratively(accounts);
+        findAllGmailAccountsImperatively(accounts);
+        findAllGmailAccountsDeclaratively(accounts);
 
     }
 
-    private static List<Account> findAllGmailAccountImperatively(List<Account> accounts) {
+    private static List<Account> findAllGmailAccountsImperatively(List<Account> accounts) {
         List<Account> gmailAccounts = new ArrayList<>();
         for (Account account : accounts) {
             if (account.getEmail().endsWith("@gmail.com")) {
@@ -27,9 +27,9 @@ public class ImperativeVsDeclarativeFiltering {
         return gmailAccounts;
     }
 
-    private static void findAllGmailAccountDeclaratively(List<Account> accounts) {
-        accounts.stream()
-                .filter(a -> a.getEmail().endsWith("@gmail"))
+    private static List<Account> findAllGmailAccountsDeclaratively(List<Account> accounts) {
+        return accounts.stream()
+                .filter(a -> a.getEmail().endsWith("@gmail.com"))
                 .collect(toList());
     }
 
