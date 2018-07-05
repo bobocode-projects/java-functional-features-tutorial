@@ -4,35 +4,28 @@ package com.bobocode;
 import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
 
-import java.util.List;
 import java.util.Optional;
 
-import static java.util.Comparator.comparing;
-
-public class OptionalExamples {
+public class  OptionalExamples {
     private static Account DEFAULT_ACCOUNT = Accounts.getAccount();
 
     public static void main(String[] args) {
-        List<Account> accounts = Accounts.getAccountList(10);
-        Optional<Account> optionalAccountWithMaxBalance = findAccountWithMaxBalance(accounts);
+        Account account = Accounts.getAccount();
+        Optional<Account> optionalAccount = Optional.of(account);
 
-        printAccountUsingWrongApproach(optionalAccountWithMaxBalance);
-        printAccountUsingRightApproach(optionalAccountWithMaxBalance);
+        printAccountUsingWrongApproach(optionalAccount);
+        printAccountUsingRightApproach(optionalAccount);
 
-        printAccountOrDefault(optionalAccountWithMaxBalance);
-        printAccountOrRandomLazily(optionalAccountWithMaxBalance);
-    }
-
-    private static Optional<Account> findAccountWithMaxBalance(List<Account> accounts) {
-        return accounts.stream().max(comparing(Account::getBalance));
+        printAccountOrDefault(optionalAccount);
+        printAccountOrRandomLazily(optionalAccount);
     }
 
     /**
      * It is not correct to process to process {@link Optional} values in the old imperative way, as it is shown below
      */
-    private static void printAccountUsingWrongApproach(Optional<Account> optionalAccountWithMaxBalance) {
-        if (optionalAccountWithMaxBalance.isPresent()) {
-            Account account = optionalAccountWithMaxBalance.get();
+    private static void printAccountUsingWrongApproach(Optional<Account> optionalAccount) {
+        if (optionalAccount.isPresent()) {
+            Account account = optionalAccount.get();
             System.out.println(account);
         }
     }
@@ -40,8 +33,8 @@ public class OptionalExamples {
     /**
      * The right way is to pass a consumer that will be used in case {@link Optional} value is not empty
      */
-    private static void printAccountUsingRightApproach(Optional<Account> optionalAccountWithMaxBalance) {
-        optionalAccountWithMaxBalance.ifPresent(System.out::println);
+    private static void printAccountUsingRightApproach(Optional<Account> optionalAccount) {
+        optionalAccount.ifPresent(System.out::println);
     }
 
     /**

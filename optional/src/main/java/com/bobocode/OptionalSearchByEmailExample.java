@@ -40,7 +40,8 @@ public class OptionalSearchByEmailExample {
     }
 
     private static void printAccount(Account account) {
-        System.out.println("This account belongs to " + account.getFirstName() + " " + account.getLastName());
+        System.out.println("This account belongs to " + account.getFirstName() +
+                " " + account.getLastName());
     }
 
     static class NoSuchElementException extends RuntimeException {
