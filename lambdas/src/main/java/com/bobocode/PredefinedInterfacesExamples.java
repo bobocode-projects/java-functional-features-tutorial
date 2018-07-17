@@ -3,7 +3,7 @@ package com.bobocode;
 import com.bobocode.data.Accounts;
 import com.bobocode.model.Account;
 
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.*;
 import java.util.stream.IntStream;
 
@@ -21,7 +21,7 @@ public class PredefinedInterfacesExamples {
     }
 
     private static void printARandomNumberUsingIntegerSupplier() {
-        IntSupplier integerSupplier = () -> new Random().nextInt(1000);
+        IntSupplier integerSupplier = () -> ThreadLocalRandom.current().nextInt(1000);
 
         System.out.println("\nNext random value: " + integerSupplier.getAsInt());
     }
@@ -42,7 +42,7 @@ public class PredefinedInterfacesExamples {
 
     private static void checkIfNumberIsPositiveUsingIntegerPredicate() {
         IntPredicate isPositive = n -> n > 0;
-        int b = new Random().nextInt();
+        int b = ThreadLocalRandom.current().nextInt();
 
         System.out.println("\n" + b + " is " + (isPositive.test(b) ? "positive" : "negative"));
     }

@@ -5,7 +5,7 @@ import com.bobocode.model.Account;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class OptionalReturningMethod {
     public static void main(String[] args) {
@@ -20,8 +20,7 @@ public class OptionalReturningMethod {
      * as a returning-value in favor of null
      */
     private static Optional<Account> findLuckyGuy(List<Account> accounts) {
-        Random random = new Random();
-        int luckyIndex = random.nextInt(accounts.size() * 3);
+        int luckyIndex = ThreadLocalRandom.current().nextInt(accounts.size() * 3);
         if (luckyIndex < accounts.size()) {
             return Optional.of(accounts.get(luckyIndex));
         } else {

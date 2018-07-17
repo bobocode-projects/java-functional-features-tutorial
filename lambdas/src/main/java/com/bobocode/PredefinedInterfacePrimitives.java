@@ -1,6 +1,6 @@
 package com.bobocode;
 
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.DoubleSupplier;
 import java.util.function.IntToDoubleFunction;
 import java.util.function.LongBinaryOperator;
@@ -16,7 +16,7 @@ public class PredefinedInterfacePrimitives {
     }
 
     private static void printRandomDoubleUsingSupplier() {
-        DoubleSupplier doubleSupplier = () -> new Random().nextDouble();
+        DoubleSupplier doubleSupplier = () -> ThreadLocalRandom.current().nextDouble();
 
         System.out.println("Random double: " + doubleSupplier.getAsDouble());
     }

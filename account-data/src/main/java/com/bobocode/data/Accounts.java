@@ -5,12 +5,12 @@ import com.bobocode.model.CreditAccount;
 import io.codearte.jfairy.Fairy;
 import io.codearte.jfairy.producer.person.Person;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
-import static java.math.BigDecimal.valueOf;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.IntStream.range;
 
@@ -29,10 +29,10 @@ public interface Accounts {
     }
 
     static CreditAccount getCreditAccount() {
-        Random random = new Random();
         CreditAccount creditAccount = new CreditAccount();
         initializeFakeFields(creditAccount);
-        creditAccount.setCreditBalance(valueOf(random.nextInt(100_000)));
+        int intBalance = ThreadLocalRandom.current().nextInt(100_000);
+        creditAccount.setCreditBalance(BigDecimal.valueOf(intBalance));
 
         return creditAccount;
     }
@@ -47,7 +47,6 @@ public interface Accounts {
     private static void initializeFakeFields(Account account) {
         Fairy fairy = Fairy.create();
         Person person = fairy.person();
-        Random random = new Random();
 
         account.setFirstName(person.getFirstName());
         account.setLastName(person.getLastName());
@@ -56,7 +55,8 @@ public interface Accounts {
                 person.getDateOfBirth().getYear(),
                 person.getDateOfBirth().getMonthOfYear(),
                 person.getDateOfBirth().getDayOfMonth()));
-        account.setBalance(valueOf(random.nextInt(200_000)));
+        int intBalance = ThreadLocalRandom.current().nextInt(200_000);
+        account.setBalance(BigDecimal.valueOf(intBalance));
         account.setCreationDate(LocalDateTime.now());
     }
 }
