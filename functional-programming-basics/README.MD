@@ -10,7 +10,8 @@ You're supposed to be familiar with OOP, have basic knowledge of JDK, and be abl
 * [Tutorial on Optional](https://github.com/bobocode-projects/java-functional-features-tutorial/tree/master/optional)
 ##
 The concept of **functional programming** is based on [λ-calculus](https://en.wikipedia.org/wiki/Lambda_calculus). Which
-brings the idea of program that **does not use mutable variables**
+brings the idea of program that **does not use mutable variables**. Why is it so important? Because all race conditions,
+deadlock conditions, and concurrent update problem are due to mutable variables.
 
 Various functional languages like [Clojure](https://clojure.org/) have been using this approach for the long time. **Java** 
 was initially created as pure OO language, but since **version 8** it offers an ability to use either **OO and functional
@@ -63,4 +64,10 @@ public class FunctionalSumOfPrimes {
 }
 ```     
 
-As you can see there is **no mutable variables** in the second example
+As you can see there is **no mutable variables** in the second example.
+
+### Event Sourcing 
+Now suppose you have enough resources (like CPU and storage), you can try to make you program functional. For instance, 
+instead of updating bank account balance, you can **store each transaction.** When state is required, you can simple 
+apply all transactions. This strategy, where you store transactions and not a state is called [**Event Sourcing**](https://martinfowler.com/eaaDev/EventSourcing.html). It 
+allows you to **avoid concurrent update issues.**  
