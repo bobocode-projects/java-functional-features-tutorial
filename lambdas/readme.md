@@ -4,7 +4,8 @@ This is the tutorial on lambdas, method reference, and functional interfaces.
 ### Pre-conditions :heavy_exclamation_mark:
 You're supposed to be familiar with OOP, have basic knowledge of JDK, and be able to write Java code. 
 ### Related exercises :muscle:
-* [Math fucntions](https://github.com/bobocode-projects/java-8-exercises/tree/master/math-functions)
+* [Math functions](https://github.com/bobocode-projects/java-8-exercises/tree/master/math-functions)
+* [Crazy lambdas](https://github.com/bobocode-projects/java-functional-features-exercises/tree/master/crazy-lambdas)
 ### See also :point_down:
 * [Tutorial on Optional](https://github.com/bobocode-projects/java-8-tutorial/tree/master/optional)
 * [Tutorial on Stream API](https://github.com/bobocode-projects/java-8-tutorial/tree/master/stream-api)
