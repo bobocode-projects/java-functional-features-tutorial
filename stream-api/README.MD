@@ -5,6 +5,8 @@ This is the tutorial on Stream API and functional programming techniques
 You're supposed to be familiar with OOP, have basic knowledge of JDK, and be able to write Java code. 
 ### Related exercises :muscle:
 * [Account analytics](https://github.com/bobocode-projects/java-functional-features-exercises/tree/master/account-analytics)
+* [File Reader](https://github.com/bobocode-projects/java-core-exercises/tree/master/file-reader)
+* [File Stats](https://github.com/bobocode-projects/java-core-exercises/tree/master/file-stats)
 ### See also :point_down:
 * [Tutorial on Lambdas](https://github.com/bobocode-projects/java-functional-features-tutorial/tree/master/lambdas)
 * [Tutorial on Optional](https://github.com/bobocode-projects/java-functional-features-tutorial/tree/master/optional)

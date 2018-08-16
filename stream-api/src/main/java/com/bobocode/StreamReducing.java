@@ -22,7 +22,7 @@ public class StreamReducing {
     private static void printTotalBalance(List<Account> accounts) {
         BigDecimal totalAmount = accounts.stream()
                 .map(Account::getBalance)
-                .reduce(BigDecimal.ONE, BigDecimal::add);
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         System.out.println("Total balance is $" + totalAmount);
     }
