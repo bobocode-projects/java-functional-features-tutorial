@@ -16,7 +16,7 @@ public class MethodReferenceExamples {
         IntUnaryOperator absOperator = Math::abs;
         int result = absOperator.applyAsInt(a);
 
-        System.out.println("abd(" + a + ") = " + result);
+        System.out.println("abs(" + a + ") = " + result);
     }
 
     private static void printSumUsingMethodReference(int a, int b) {
